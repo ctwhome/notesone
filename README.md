@@ -15,4 +15,21 @@ Differences versus OneNote:
 | Drag to copy |   ✅    |   ❌ |
 | Consistency across devices |   ✅    |   ❌ |
 | All platforms |   ✅    |   ❌ |
+| Animated Gifs |   ✅    |   ❌ |
+| Videos |   ✅    |   ❌ |
+| iFrames |   ✅    |   ❌ |
 |  | |     |
+
+
+
+### Development
+```
+clone reposotory
+yarn install
+yarn dev
+```
+
+*Build for production*
+```
+yarn build
+```

@@ -1,5 +1,5 @@
 <template>
-  <h1>Canvas</h1>
+  <h1>NotesOne</h1>
   <div class="controls">
     <button id="add" @click="add">Add a triangle</button>
     <p>Zoom(alt+scroll) and Panning(alt+click) (in development)</p>
