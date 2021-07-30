@@ -5,7 +5,7 @@ The first open source alternative to OneNote
 
 Made with :
 - FabrikJS
-- Vue 3 (Vite)
+- Nuxt 3 (Vite)
 - Tailwindcss
 
 
