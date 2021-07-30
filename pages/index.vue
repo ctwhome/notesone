@@ -1,6 +1,6 @@
 <template>
   <div>
-    Pan: alt + click
+    Pan: alt + click - Zoom: alt + scroll
 
     <fabric />
   </div>
