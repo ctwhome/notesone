@@ -10,10 +10,10 @@ export default {
 
   // If deploying on github pages
   // http://<username>.github.io/<repository-name>.
-  router: {
-    // base: '/<repository-name>/'
-    base: isDev ? '/' : '/nuxt/'
-  },
+  // router: {
+  //   // base: '/<repository-name>/'
+  //   base: isDev ? '/' : '/nuxt/'
+  // },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
