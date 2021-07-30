@@ -1,10 +1,28 @@
-# Nuxt start template
+# Notes One
+The first open source alternative to OneNote
 
-Template Nuxt with most common configuration to a based set with Nuxt, by Ctwhome
+[![Netlify Status](https://api.netlify.com/api/v1/badges/456c69bc-acbe-4e23-8956-fe5edf15cb7c/deploy-status)](https://app.netlify.com/sites/notesone/deploys)
 
-```
-npx degit ctwhome/nuxt <directory-name>
-```
+Made with :
+- FabrikJS
+- Vue 3 (Vite)
+- Tailwindcss
+
+
+Differences versus OneNote:
+
+|    |      NotesOne      |  OneNote |
+|----------|:-------------:|------:|
+| Mouse Panning |  ✅    | ❌ |
+| Drag to copy |   ✅    |   ❌ |
+| Consistency across devices |   ✅    |   ❌ |
+| All platforms |   ✅    |   ❌ |
+| Animated Gifs |   ✅    |   ❌ |
+| Videos |   ✅    |   ❌ |
+| iFrames |   ✅    |   ❌ |
+|  | |     |
+
+
 
 ### Includes:
 
