@@ -4,8 +4,8 @@ The first open source alternative to OneNote
 [![Netlify Status](https://api.netlify.com/api/v1/badges/456c69bc-acbe-4e23-8956-fe5edf15cb7c/deploy-status)](https://app.netlify.com/sites/notesone/deploys)
 
 Made with :
-- FabrikJS
-- Vue 3 (Vite)
+- FabricJs
+- Nuxt 3 (Vite)
 - Tailwindcss
 
 
