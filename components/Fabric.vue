@@ -26,7 +26,7 @@
       <div class="btn btn-primary btn-sm" @click="resetZoom">
         100%
       </div>
-      <div class="tooltip" data-tip="(B)">
+      <div class="tooltip" data-tip="B">
         <div class="btn btn-primary btn-sm" :class="{'bg-secondary':isDrawingMode, 'hover:bg-secondary-focus':isDrawingMode }" @click="toggleDrawingMode">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="tooltip" data-tip="⌫">
-        <div class="btn btn-primary btn-sm" @click="deleteObjects">
+        <div class="btn btn-error btn-sm" :disabled="selectedItems <= 0" @click="deleteObjects">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
@@ -62,7 +62,7 @@
 
       <div class="w-1/4">
         <canvas id="minimap" width="130" height="130" />
-        Elements: {{ design && design._objects.length }}
+        Elements: {{ selectedItems }}
         <br>
         <input v-model="showStats" type="checkbox" class="checkbox">Show Stats
         <pre v-if="showStats" class=" text-xs overflow-auto" style="height: 800px">{{ canvasWidth }}</pre>
@@ -80,6 +80,7 @@ export default {
   name: 'Fabric',
   data () {
     return {
+      selectedItems: 0,
       showStats: false,
 
       // redo  - undo
@@ -108,9 +109,7 @@ export default {
     })
 
     onKeyStroke('Backspace', (e) => {
-      console.log('🎹', e)
       e.preventDefault()
-      // console.log('💚', this.design._objects)
       this.deleteObjects()
     })
 
@@ -294,7 +293,9 @@ export default {
       this.selection = true
       // design.backgroundColor = 'red'
       // const output = this.$refs.output
-      // console.log('🎹', design.backgroundColor = 'red')
+
+      // selected objects
+      that.selectedItems = design.getActiveObjects().length
     })
 
     // ===============
@@ -327,6 +328,7 @@ export default {
         this.design.remove(obj)
       })
       this.design.discardActiveObject().renderAll()
+      this.selectedItems = this.design.getActiveObjects().length
     },
     toggleDrawingMode () {
       this.isDrawingMode = !this.isDrawingMode
