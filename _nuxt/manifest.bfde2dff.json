@@ -1,7 +1,7 @@
 {
   "name": "nuxt-basis",
   "short_name": "nuxt-basis",
-  "description": "Template Nuxt with most common configuration to a based set with Nuxt, by Ctwhome",
+  "description": "The first open source alternative to OneNote",
   "icons": [
     {
       "src": "/nuxt/_nuxt/icons/icon_64x64.e3e9fb.png",
