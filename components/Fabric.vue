@@ -33,6 +33,8 @@
           </svg>
         </div>
       </div>
+      <color-picker @on-color-change="changeColor" />
+
       <div class="tooltip" data-tip="⌫">
         <div class="btn btn-error btn-sm" :disabled="selectedItems <= 0" @click="deleteObjects">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,12 +76,22 @@
 <script>
 import { fabric } from 'fabric'
 import { onKeyStroke } from '@vueuse/core'
+
 import dataObjects from '~/canvas/dataObjects.js'
 
 export default {
   name: 'Fabric',
+  components: {
+    // ColorPicker
+  },
   data () {
     return {
+      // color picker
+      color: '#59c7f9',
+      suckerCanvas: null,
+      suckerArea: [],
+      isSucking: false,
+
       selectedItems: 0,
       showStats: false,
 
@@ -135,7 +147,20 @@ export default {
       }
       this.isRedoing = false
     })
-
+    if (design.freeDrawingBrush) {
+      // brush.color = 'red'
+      // if (brush.getPatternSrc) {
+      //   brush.source = brush.getPatternSrc.call(brush)
+      // }
+      // brush.width = parseInt(drawingLineWidthEl.value, 10) || 1;
+      // brush.shadow = new fabric.Shadow({
+      //   blur: parseInt(drawingShadowWidth.value, 10) || 0,
+      //   offsetX: 0,
+      //   offsetY: 0,
+      //   affectStroke: true,
+      //   color: drawingShadowColorEl.value,
+      // });
+    }
     //
     // design.on({
     //   'touch:gesture' (e) {
@@ -320,6 +345,20 @@ export default {
     })
   },
   methods: {
+    changeColor (color) {
+      console.log('🎹2', color)
+      this.design.freeDrawingBrush.color = color
+    },
+    openSucker (isOpen) {
+      if (isOpen) {
+        // ... canvas be created
+        // this.suckerCanvas = canvas
+        // this.suckerArea = [x1, y1, x2, y2]
+      } else {
+        // this.suckerCanvas && this.suckerCanvas.remove
+      }
+    },
+
     deleteObjects () {
       this.design.getActiveObjects().forEach((obj) => {
         // console.log('🔥️', this.design._objects, obj)
