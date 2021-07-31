@@ -19,6 +19,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/composition-api": "^0.26.0",
     "@nuxtjs/pwa": "^3.3.5",
+    "@supabase/supabase-js": "^1.21.0",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
     "@vueuse/core": "^5.2.0",
@@ -26,6 +27,7 @@
     "daisyui": "^1.10.0",
     "fabric": "^4.5.1",
     "imagesloaded": "^4.1.4",
+    "lodash.isequal": "^4.5.0",
     "nuxt": "^2.15.7",
     "theme-change": "^2.0.2"
   },

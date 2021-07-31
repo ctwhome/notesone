@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-screen bg-base-200">
+  <div class="flex flex-col h-screen w-screen bg-base-200">
     <main-header />
     <Nuxt />
   </div>

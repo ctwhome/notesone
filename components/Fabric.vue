@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-auto ">
-    <div>{{ text }}</div> {{ windowWidth }} - {{ windowHeight }}
+    <div>{{ windowWidth }} - {{ windowHeight }}</div>
 
     <div class="flex gap-2 items-center">
       <div class="btn btn-primary btn-sm" @click="undo">
@@ -86,11 +86,6 @@ export default {
   },
   data () {
     return {
-      // color picker
-      color: '#59c7f9',
-      suckerCanvas: null,
-      suckerArea: [],
-      isSucking: false,
 
       selectedItems: 0,
       showStats: false,
@@ -102,7 +97,6 @@ export default {
       // drawing Mode
       isDrawingMode: false,
       canvas: null,
-      text: 'nothing here',
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
       design: null,

@@ -1,5 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development'
 export default {
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   ssr: false,
@@ -7,7 +8,12 @@ export default {
   server: {
     host: '0' // default: localhost
   },
-
+  publicRuntimeConfig: {
+    supabaseUrl: process.env.NUXT_ENV_SUPABASE_URL,
+    supabaseKey: process.env.NUXT_ENV_SUPABASE_KEY
+  },
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
   // If deploying on github pages
   // http://<username>.github.io/<repository-name>.
   // router: {
@@ -41,8 +47,11 @@ export default {
   plugins: [
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  vite: {
+    optimizeDeps: {
+      exclude: ['@supabase/supabase-js']
+    }
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -50,8 +59,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/composition-api/module',
-    'nuxt-vite'
+    '@nuxtjs/composition-api/module'
+    // 'nuxt-vite'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
