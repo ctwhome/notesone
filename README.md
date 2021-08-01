@@ -2,11 +2,15 @@
 The first open source alternative to OneNote
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/456c69bc-acbe-4e23-8956-fe5edf15cb7c/deploy-status)](https://app.netlify.com/sites/notesone/deploys)
+This application is meant to be an open source full featured one to one with Microsoft OneNote. 
+After many years of onenote screwing around with different applications across devices, inconsistent features, complete neglecting android users, and to some extend Mac users as well. Their poor decision with the product, and the lack of care for feedback forced me to start taking action and build a pair to pair alternative, with modern tooling and seamless across all decides. 
 
 Made with :
 - FabricJs
-- Nuxt 3 (Vite)
+- Nuxt (Vite)
 - Tailwindcss
+
+
 
 
 Differences versus OneNote:
@@ -78,7 +82,7 @@ $ yarn start
 $ yarn generate
 
 # generate and local test
-$ yarn enerate && yarn star yarn generate && yarn start
+$ yarn enerate && yarn star
 ```
 
 For a detailed explanation of how things work, check out the [documentation](https://nuxtjs.org).
